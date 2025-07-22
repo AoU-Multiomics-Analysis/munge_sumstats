@@ -1,9 +1,11 @@
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 library(data.table)
 library(MungeSumstats)
 library(SNPlocs.Hsapiens.dbSNP155.GRCh38)
 library(BSgenome.Hsapiens.NCBI.GRCh38)
 suppressPackageStartupMessages(library(optparse))
+
+BiocManager::install("SNPlocs.Hsapiens.dbSNP155.GRCh38")
 
 ###### PARSE OPTIONS ######
 option_list <- list(
