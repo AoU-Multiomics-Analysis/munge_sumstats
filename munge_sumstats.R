@@ -1,11 +1,11 @@
 suppressPackageStartupMessages(library(tidyverse))
 library(data.table)
 library(MungeSumstats)
-library(SNPlocs.Hsapiens.dbSNP155.GRCh38)
 library(BSgenome.Hsapiens.NCBI.GRCh38)
 suppressPackageStartupMessages(library(optparse))
 
 BiocManager::install("SNPlocs.Hsapiens.dbSNP155.GRCh38")
+library(SNPlocs.Hsapiens.dbSNP155.GRCh38)
 
 ###### PARSE OPTIONS ######
 option_list <- list(
@@ -24,8 +24,8 @@ output_prefix <- opt$output_prefix
 
 system(paste('wget ',sumstats_path,' . '))
 
-output_file <- paste0(output_prefix,'_munged_summary_statistics')
-munged_sumstats <- MungeSumstats::format_sumstats(basename(sumstats_path), ref_genome="GRCh38") %>% 
-        mutate(outcome = output_prefix,save_path = output_file)
-#munged_sumstats %>% fwrite(file = output_file)
+output_file <- paste0(output_prefix,'_munged_summary_statistics.tsv.gz')
+munged_sumstats <- MungeSumstats::format_sumstats(basename(sumstats_path), ref_genome="GRCh38",return_data = TRUE,return_format = "data.table") %>% 
+        mutate(outcome = output_prefix)
+munged_sumstats %>% fwrite(file = output_file)
 
