@@ -2,7 +2,7 @@
 task MungeSumstats{
     String SumstatsPath 
     String OutputPrefix 
-
+    String DockerPath
 command {
     Rscript ${munge_sumstats_rscript} \
         --sumstats_path ${SumstatsPath} \
@@ -11,8 +11,8 @@ command {
     }
 
 runtime {
-        docker: 'quay.io/kfkf33/susier:v24.01.1'        
-        memory: "${memory}GB"
+        docker: '${DockerPath}'        
+        memory: "$16GB"
         disks: "local-disk 500 SSD"
         bootDiskSizeGb: 25
         cpu: "1"
