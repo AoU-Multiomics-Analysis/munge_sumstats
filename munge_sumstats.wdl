@@ -8,7 +8,7 @@ command {
         --sumstats_path ${SumstatsPath} \
         --prefix ${OutputPrefix}
 
-}
+    }
 
 runtime {
         docker: 'quay.io/kfkf33/susier:v24.01.1'        
@@ -20,7 +20,7 @@ runtime {
     }
 
 output {
-    File SusieParquet = "${OutputPrefix}.parquet" 
+    File MungedSumstats = "${OutputPrefix}_munged_summary_statistics.tsv" 
     }
 }
 
