@@ -14,7 +14,7 @@ command {
 
 runtime {
         docker: '${DockerPath}'        
-        memory: "16GB"
+        memory: "64GB"
         disks: "local-disk 500 SSD"
         bootDiskSizeGb: 25
         cpu: "1"
