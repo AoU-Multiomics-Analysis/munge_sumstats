@@ -21,7 +21,7 @@ runtime {
     }
 
 output {
-    File MungedSumstats = "${OutputPrefix}_munged_summary_statistics.tsv" 
+    File MungedSumstats = "${OutputPrefix}_munged_summary_statistics.tsv.gz" 
     }
 }
 

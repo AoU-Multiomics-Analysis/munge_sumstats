@@ -24,7 +24,7 @@ output_prefix <- opt$output_prefix
 
 system(paste('wget ',sumstats_path,' . '))
 
-output_file <- paste0(output_prefix,'_munged_summary_statistics.tsv')
+output_file <- paste0(output_prefix,'_munged_summary_statistics')
 munged_sumstats <- MungeSumstats::format_sumstats(basename(sumstats_path), ref_genome="GRCh38") %>% 
         mutate(outcome = output_prefix,save_path = output_file)
 #munged_sumstats %>% fwrite(file = output_file)
