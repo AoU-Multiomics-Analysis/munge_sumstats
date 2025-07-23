@@ -1,10 +1,7 @@
 
-
 task MungeSumstats{
     String SumstatsPath 
     String OutputPrefix 
-}
-
 
 command {
     Rscript ${munge_sumstats_rscript} \
