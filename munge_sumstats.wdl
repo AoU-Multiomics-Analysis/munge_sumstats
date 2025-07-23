@@ -4,17 +4,17 @@ task MungeSumstats{
     String OutputPrefix 
     String DockerPath
     File  MungeSumstatsRscriptPath
+    Int Memory
 command {
     #gsutil cp ${MungeSumstatsRscriptPath} . 
     Rscript ${MungeSumstatsRscriptPath} \
         --sumstats_path ${SumstatsPath} \
         --prefix ${OutputPrefix}
-
     }
 
 runtime {
         docker: '${DockerPath}'        
-        memory: "64GB"
+        memory: "${Memory}GB"
         disks: "local-disk 500 SSD"
         bootDiskSizeGb: 25
         cpu: "1"
