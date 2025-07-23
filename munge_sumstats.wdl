@@ -24,6 +24,6 @@ output {
     }
 }
 
-workflow susieR_workflow {
-    call munge_sumstats 
+workflow MungeSumstatsWorkflow {
+    call MungeSumstats 
     }
