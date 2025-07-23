@@ -3,9 +3,9 @@ task MungeSumstats{
     String SumstatsPath 
     String OutputPrefix 
     String DockerPath
-    String MungeSumstatsRscriptPath
+    File  MungeSumstatsRscriptPath
 command {
-    gsutil cp ${MungeSumstatsRscriptPath} . 
+    #gsutil cp ${MungeSumstatsRscriptPath} . 
     Rscript ${MungeSumstatsRscriptPath} \
         --sumstats_path ${SumstatsPath} \
         --prefix ${OutputPrefix}
