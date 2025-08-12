@@ -13,7 +13,7 @@ command {
     }
 
 runtime {
-        docker: '${DockerPath}'        
+        docker: 'ghcr.io/aou-multiomics-analysis/munge_sumstats:main'        
         memory: "${Memory}GB"
         disks: "local-disk 500 SSD"
         bootDiskSizeGb: 25
