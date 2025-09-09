@@ -3,3 +3,6 @@ workflows:
   - subclass: WDL 
     primaryDescriptorPath: /workflows/munge_sumstats.wdl
     name: MungeSumstats
+  - subclass: WDL 
+    primaryDescriptorPath: /workflows/tabix_sumstats.wdl
+    name: TabixSumstats 
