@@ -12,7 +12,7 @@ RUN micromamba install -y -n base -c conda-forge -c bioconda \
     conda-forge::r-tidyverse \
     conda-forge::datatable \
     conda-forge::r-optparse \
-    bioconda::tabix
+    dnachun::tabix
 
 ## Default command to run when the container starts
 CMD ["bash"]
