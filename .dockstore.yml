@@ -1,5 +1,5 @@
 version: 1.2
 workflows:
   - subclass: WDL 
-    primaryDescriptorPath: /munge_sumstats.wdl
+    primaryDescriptorPath: /workflows/munge_sumstats.wdl
     name: MungeSumstats
