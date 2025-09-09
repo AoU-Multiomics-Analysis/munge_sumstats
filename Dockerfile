@@ -11,7 +11,8 @@ RUN micromamba install -y -n base -c conda-forge -c bioconda \
     bioconductor-BSgenome.Hsapiens.NCBI.GRCh38 \
     conda-forge::r-tidyverse \
     conda-forge::datatable \
-    conda-forge::r-optparse
+    conda-forge::r-optparse \
+    bioconda::tabix
 
 ## Default command to run when the container starts
 CMD ["bash"]
