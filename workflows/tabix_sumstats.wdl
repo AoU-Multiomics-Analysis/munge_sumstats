@@ -13,7 +13,7 @@ task TabixSumstats{
     >>>
 
 runtime {
-        docker: 'evinpadhi/munge_sumstats:latest'        
+        docker: 'ghcr.io/aou-multiomics-analysis/munge_sumstats:main'        
         memory: "32GB"
         disks: "local-disk 500 SSD"
         bootDiskSizeGb: 25
