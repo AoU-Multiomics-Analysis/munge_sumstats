@@ -7,7 +7,7 @@ ENV PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
 ## Create a new environment and install packages
 RUN micromamba install -y -n base -c conda-forge -c bioconda \
     bioconductor-MungeSumstats \
-    bioconductor-SNPlocs.Hsapiens.dbSNP155.GRCh38 \
+    #bioconductor-SNPlocs.Hsapiens.dbSNP155.GRCh38 \
     bioconductor-BSgenome.Hsapiens.NCBI.GRCh38 \
     conda-forge::r-tidyverse \
     conda-forge::datatable \
