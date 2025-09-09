@@ -8,7 +8,9 @@ task TabixSumstats{
     String BasePrefix = sub(basename(SumStats, ".gz"), "\\.tsv$", "")
 
     command <<<
-        sed '1s/^/#/' ~{SumStats} | bgzip > ~{BasePrefix}.tabix.tsv.gz
+        echo ~{BasePrefix}
+
+        zcat  ~{SumStats }| sed '1s/^/#/' | bgzip > ~{BasePrefix}.tabix.tsv.gz
         tabix -s 2 -b 3 -e 3 ~{BasePrefix}.tabix.tsv.gz
     >>>
 
