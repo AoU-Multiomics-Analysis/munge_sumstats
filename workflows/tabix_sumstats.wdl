@@ -35,5 +35,9 @@ workflow TabixSumstatsWorkflow {
     call TabixSumstats {
         input:
             SumStats = SumStats
-        } 
+        }
+    output {
+        File TabixMungedSumstats = TabixSumstats.TabixMungedSumstats
+        File TabixMungedSumstatsIndex = TabixSumstats.TabixMungedSumstatsIndex
+        }
     }
