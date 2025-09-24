@@ -11,7 +11,7 @@ task QuerySumstats{
     String BasePrefix = sub(basename(SumStats), "_munged_summary_statistics.*$", "")
 
 command <<<
-    tabix -R ~{InputBed} ~{SumStats} > ~{OutputPrefix}.~{BasePrefix}.bed 
+    tabix -h -R ~{InputBed} ~{SumStats} > ~{OutputPrefix}.~{BasePrefix}.bed 
     >>>
 
 runtime {
